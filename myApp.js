@@ -11,6 +11,7 @@ app.use(helmet.hidePoweredBy());
 app.use(helmet.noSniff());
 app.use(helmet.ieNoOpen());
 app.use(helmet.hsts({ maxAge: timeInSeconds, force: true }));
+app.use(helmet.dnsPrefetchControl());
 app.use(express.static("public"));
 app.disable("strict-transport-security");
 app.use("/_api", api);
